@@ -391,6 +391,8 @@ window.PLACES = [
  {id:"dotcom",n:"dotcom coffee Asakusabashi",cat:"cafe",t:"กาแฟ",a:"อาซากุสะบาชิ",lat:35.6997628,lng:139.7818727,g:4.6,tl:3.43,cd:[],bk:"walk",how:"เดินเข้าได้",pid:"ChIJs_03VgCPGGARKN4unUiFzv4"},
  {id:"bongen",n:"BONGEN COFFEE Nihonbashi",cat:"cafe",t:"กาแฟ",a:"เคียวบาชิ",lat:35.6768331,lng:139.7737574,g:4.1,tl:3.38,cd:[],bk:"walk",how:"เดินเข้าได้ ปิด 17:00",pid:"ChIJ8WsLrN-JGGAR5e_DmVwDirI"},
  {id:"swamp",n:"coffee swamp",cat:"cafe",t:"กาแฟ",a:"นิชิชินจูกุ",lat:35.6949274,lng:139.6950661,g:4.9,tl:3.35,cd:[],bk:"walk",how:"เปิด 7:00 เดินเข้าได้",pid:"ChIJw47GgEeNGGAR8F6RMcBz46c"},
+ {id:"glitch",n:"GLITCH COFFEE & ROASTERS (Kanda)",cat:"cafe",t:"กาแฟคั่วอ่อน · ซื้อเมล็ด",a:"คันดะ-นิชิกิโจ (จิมโบโจ)",lat:35.6937428,lng:139.7613047,g:4.4,cd:[],bk:"walk",how:"จ.–ศ. 08:00–19:00 · ส.–อา. 09:00 · มักมีคิว บาริสต้าให้ดมเมล็ดก่อนเลือก · ซื้อเมล็ดกลับได้",pid:"ChIJDxYKIhCMGGARScnqzc-T-TU"},
+ {id:"wrights",n:"Coffee Wrights Kuramae",cat:"cafe",t:"โรงคั่ว · ซื้อเมล็ด",a:"คุระมาเอะ",lat:35.7040789,lng:139.7897193,g:4.4,cd:[1,2],bk:"walk",how:"พ.–ศ. 11:00–16:00 · ส.–อา. 10:00–17:30 · ปิด จ.–อ. · คั่วที่ร้าน",pid:"ChIJT52xaLeOGGAR6ZstEJFAmF0"},
  {id:"leaves",n:"Leaves Coffee Roasters",cat:"cafe",t:"กาแฟ",a:"ฮอนโจ (คุระมาเอะ)",lat:35.7027051,lng:139.7978326,g:4.5,tl:3.35,cd:[2,3,4],bk:"walk",how:"ต่อคิวเพื่อนั่ง ซื้อเมล็ดไม่ต้องต่อคิว",pid:"ChIJs73IqKGPGGAR8vR56OnCUD4"},
  {id:"yoka",n:"yoka",cat:"cafe",t:"คาเฟ่",a:"เมกุโระ",lat:35.6311477,lng:139.712319,g:3.7,tl:3.33,cd:[3],bk:"can",how:"รับจองได้ เปิด 8:00",pid:"ChIJTX8gDwCLGGARE0jF3cAMyIA"},
  {id:"hojicha",n:"ほうじ茶STAND",cat:"cafe",t:"ชาโฮจิฉะ",a:"เมกุโระ",lat:35.6328005,lng:139.6878476,g:4.9,tl:3.06,cd:[1,2,3,4,5],bk:"walk",how:"Google ระบุเปิดเฉพาะ ส.–อา.",pid:"ChIJH-vcYABFGGARH3MdnZe4bhA"},
@@ -449,7 +451,7 @@ window.FOOD = ["ramen","tonkatsu","sushi","izakaya","yakitori","tempura","soba",
 
 // Claude's plan (times = Japan time)
 window.DEFAULT_PLAN = {
- v:5,
+ v:6,
  days:[
   {date:"2026-10-19",dow:1,label:"จ. 19 ต.ค.",title:"ถึงโตเกียว · อาโอยามะ ฮาราจูกุ รปปงหงิ",items:[
    ["haneda","06:00",""],["hotel1","08:30","ฝากกระเป๋า ขอ early check-in"],
@@ -475,9 +477,9 @@ window.DEFAULT_PLAN = {
    ["yukimura","18:30","มื้อเย็น เทมปุระคาคิอาเกะ ชินบาชิ (โทรจองได้ 03-6721-5343 เงินสด)"],
    ["yodobashi","19:45","แว่น Meta Adventurer · JR ชินบาชิ→อากิฮาบาระ 7 นาที"],
    ["apa","21:15","JR อากิฮาบาระ→อุเอโนะ 1 สถานี"]]},
-  {date:"2026-10-23",dow:5,label:"ศ. 23 ต.ค.",title:"อาซากุสะ · บินกลับ",items:[
-   ["apa","09:30","เช็กเอาต์ ฝากกระเป๋า"],["leaves","10:00",""],
-   ["sugita","11:15","ต่อคิวก่อนเปิด 11:30"],["apa","13:30","รับกระเป๋า"],["narita","14:45","Skyliner ราว 14:00 · JL707 18:25"]]}
+  {date:"2026-10-23",dow:5,label:"ศ. 23 ต.ค.",title:"กาแฟ · คุระมาเอะ · บินกลับ",items:[
+   ["apa","08:30","เช็กเอาต์ ฝากกระเป๋า"],["glitch","09:00","JR อุเอโนะ→คันดะ แล้วเดิน ~10 นาที · ซื้อเมล็ด"],["leaves","10:15","ซื้อเมล็ด"],
+   ["sugita","11:00","ต่อคิวก่อนเปิด 11:30"],["wrights","12:40","เปิด 11:00–16:00 · ซื้อเมล็ด"],["apa","13:30","รับกระเป๋า"],["narita","14:45","Skyliner ราว 14:00 · JL707 18:25"]]}
  ],
  custom:[], booked:{}
 };
