@@ -79,11 +79,17 @@ input[type=text],input[type=search],input[type=time],select{border:1px solid var
 .dayhead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
 .dayhead .actions{display:flex;gap:6px;flex-wrap:wrap}
 .split{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:18px;align-items:start}
-.mapbox{position:sticky;top:120px;height:calc(100vh - 150px);min-height:360px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--sunk)}
+.mapcol{position:sticky;top:120px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.mapnav{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px;align-items:center}
+.mapnav .navlabel{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+.stop.focus{border-color:var(--ai);box-shadow:0 0 0 2px var(--ai-soft)}
+.mk.focus{transform:scale(1.35);box-shadow:0 0 0 3px #fff,0 2px 6px rgba(0,0,0,.45)}
+.mapbox{height:calc(100vh - 200px);min-height:360px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--sunk)}
 #allmap{height:420px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--sunk);margin-bottom:14px}
 @media (max-width:860px){
   .split{grid-template-columns:1fr}
-  .mapbox{position:relative;top:0;height:300px;min-height:0;order:-1}
+  .mapcol{position:relative;top:0;order:-1}
+  .mapbox{height:300px;min-height:0}
   #allmap{height:300px}
 }
 ol.stops{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
@@ -218,7 +224,14 @@ td.how{max-width:42ch;font-size:13.5px}
         </div>
         <p class="muted small" style="margin-top:8px">ลากเลขหน้าชื่อเพื่อสลับลำดับ หรือใช้ปุ่ม ↑ ↓ · ⚠ สีแดง = ร้านปิดวันนั้น · ทุกการแก้ไขบันทึกในเครื่องนี้อัตโนมัติ</p>
       </div>
-      <div class="mapbox" id="daymap"></div>
+      <div class="mapcol">
+        <div class="mapbox" id="daymap"></div>
+        <div class="mapnav" id="mapnav">
+          <button class="btn" type="button" id="navPrev" aria-label="สถานที่ก่อนหน้า">◀ ก่อนหน้า</button>
+          <button class="btn ghost navlabel" type="button" id="navAll" title="กดเพื่อดูภาพรวมทั้งวัน">ภาพรวมทั้งวัน</button>
+          <button class="btn" type="button" id="navNext" aria-label="สถานที่ถัดไป">ถัดไป ▶</button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -433,6 +446,8 @@ window.PLACES = [
  {id:"aomipark",n:"Aomi Minami Port Park + Underground Parking (TOKYO ATLAS)",cat:"museum",t:"La Bouteille (ศิลปินอยู่ในขวดยักษ์) + ลานจอดรถใต้ดิน 197.5 ม. งานศิลปิน 8 คน",a:"อาโอมิ โอไดบะ",lat:35.61607,lng:139.7756369,g:4.1,cd:[1],bk:"must",how:"ลานจอดรถใต้ดินต้องจองรอบ (ฟรี) ผ่าน ArtSticker: artsticker.app/events/157445 · 10:00–17:00 เข้าได้ถึง 16:30",url:"https://artsticker.app/events/157445",pid:"ChIJlRH3kQBiGGAR8VJAfZQgVbE"},
  {id:"divercity",n:"DiverCity Tokyo Plaza",cat:"shop",t:"ห้าง + ฟู้ดคอร์ต",a:"อาโอมิ โอไดบะ",lat:35.6247851,lng:139.7758551,g:4.2,cd:[],bk:"walk",how:"วันธรรมดา 11:00–20:00 · ฟู้ดคอร์ตชั้น 2 · ร้านคาแรกเตอร์และกาชาปองชั้นบน",pid:"ChIJpbpu0_mJGGARd9sJ-psh9Gc"},
  {id:"marinepark",n:"Odaiba Marine Park / Daiba Park (Narcissus Garden)",cat:"museum",t:"Narcissus Garden ของ Yayoi Kusama ริมทะเล · TOKYO ATLAS",a:"ไดบะ โอไดบะ",lat:35.6300488,lng:139.7756912,g:4.4,cd:[1],bk:"walk",how:"กลางแจ้ง · ฟรี · 10:00–17:00 · วิวสะพาน Rainbow Bridge · Daiba Park เดินจากชายหาด ~10 นาที",pid:"ChIJ18IK6x2KGGARKTc2yLS-030"},
+ {id:"dsm",n:"Dover Street Market Ginza",cat:"shop",t:"ห้างคอนเซปต์หลายชั้น (Comme des Garçons ฯลฯ) · มี Cecilie Bahnsen ในรายชื่อร้านค้า",a:"กินซ่า 6-chōme (GINZA SIX ฝั่งตรงข้าม)",lat:35.6704316,lng:139.763143,g:4.2,cd:[],bk:"walk",how:"11:00–20:00 ทุกวัน · พกพาสปอร์ตสำหรับ Tax-free",pid:"ChIJCyrxGuaLGGARJWVsJlwEERU"},
+ {id:"muji",n:"MUJI Ginza",cat:"shop",t:"แฟลกชิป MUJI ใหญ่สุด 11 ชั้น (มีโซนอาหาร เบเกอรี่ และ MUJI Hotel)",a:"กินซ่า 3-chōme (Namiki-dori)",lat:35.673214,lng:139.7653677,g:4.3,cd:[],bk:"walk",how:"11:00–21:00 ทุกวัน · Tax-free ที่ชั้น 4 (พกพาสปอร์ต) · เบเกอรี่/คาเฟ่ชั้น 1",pid:"ChIJfc-uOKqLGGAR-bVyIUWjtQo"},
  {id:"sanrioasakusa",n:"Sanrio Gift Gate Asakusa",cat:"shop",t:"ร้าน Sanrio",a:"อาซากุสะ",lat:35.711491,lng:139.794924,g:4.4,cd:[],how:"ทางเข้าเป็น Hello Kitty ตัวใหญ่",pid:"ChIJ0zfByHGPGGARHC7LMPjhGX0"},
  {id:"cocomeister",n:"COCOMEISTER Ginza",cat:"shop",t:"เครื่องหนังญี่ปุ่น",a:"กินซ่า",lat:35.6728427,lng:139.766063,g:4.6,cd:[],how:"เปิดถึง 20:00",pid:"ChIJoQ-001mLGGARZwkyksy1eyU"},
  {id:"hakujitsu",n:"Hakujitsu",cat:"shop",t:"เซรามิก / ของแต่งบ้าน",a:"ยานางิบาชิ",lat:35.6975853,lng:139.7874603,g:3.9,cd:[],how:"เปิด 13:00–17:00",pid:"ChIJRQhgaqWOGGARNlZXFyQ4rdc"},
@@ -462,17 +477,18 @@ window.FOOD = ["ramen","tonkatsu","sushi","izakaya","yakitori","tempura","soba",
 
 // Claude's plan (times = Japan time)
 window.DEFAULT_PLAN = {
- v:14,
+ v:19,
  days:[
   {date:"2026-10-19",dow:1,label:"จ. 19 ต.ค.",title:"ถึงโตเกียว · อาโอยามะ ฮาราจูกุ รปปงหงิ",items:[
    ["haneda","06:00",""],["hotel1","08:30","ฝากกระเป๋า ขอ early check-in"],
    ["littledarling","09:00",""],["meijipark","09:35",""],["age3","10:00","ไปตอนร้านเปิด คิวสั้น · ซื้อกลับ กินในสวน"],["beamssports","10:25","อยู่ใน Meiji Park อาคาร A"],
    ["nanaido","10:50","ต่อคิว ร้านเปิด 11:30"],
    ["mameya","12:15",""],["humanmade","12:45","ร้านเปิด 11:00 · อาจต่อคิว"],["littlebakery","13:20","อยู่ใกล้ HUMAN MADE · ซื้อกลับหรือนั่งด้านหลัง"],["rocky","13:45",""],["petparadise","14:00",""],["sanrioharajuku","14:10","อยู่ติดกับ Pet Paradise"],
-   ["tsujihan","14:50","ไคเซนด้ง ก่อนเข้าโรงแรม (แท็กซี่ ~20 นาที) · ห้างอยู่ใกล้ 1 Hotel"],["hotel1","15:35","เช็กอิน พัก"],
-   ["nact","16:15","จันทร์ปิด 18:00"],["d2121","17:15",""],["midtown","17:45",""],["ronherman","18:00",""],
-   ["tomo","18:45","มื้อเย็น ราเมนทรัฟเฟิล (จองผ่าน Google Maps ได้)"],
-   ["roppongihills","20:00","จุดชมวิว Tokyo City View ชั้น 52 (Mori Art Museum ปิดช่วงนี้ เช็กเวลาจุดชมวิวก่อนไป)"]]},
+   ["tsujihan","14:50","ไคเซนด้ง ก่อนเข้าโรงแรม (แท็กซี่ ~20 นาที) · ห้างอยู่ใกล้ 1 Hotel"],["hotel1","15:35","เช็กอิน แล้วนั่งพักที่บาร์/เลานจ์ของ 1 Hotel กินอะไรเบาๆ"],
+   ["nact","16:50","แท็กซี่ ~8 นาที · วันจันทร์ปิด 18:00 · ออก 17:45"],
+   ["teamlab","18:00","✓ จองแล้ว รอบ 18:00–18:30 · แท็กซี่จาก National Art Center ~10 นาที · เผื่อ ~2 ชม. · มีล็อกเกอร์ฟรี · โหลดแอป teamLab ก่อน"],
+   ["tomo","20:30","มื้อเย็น ราเมนทรัฟเฟิล · เปิดถึง 22:00 · แท็กซี่ ~8 นาที"],
+   ["hotel1","21:30","กลับโรงแรม"]]},
   {date:"2026-10-20",dow:2,label:"อ. 20 ต.ค.",title:"โอไดบะ · TOKYO ATLAS (Yayoi Kusama) · วันฝน",items:[
    ["hotel1","09:30","แท็กซี่ไปโอไดบะ ~25 นาที (หรือรถไฟ Yurikamome จากชิมบาชิ)"],
    ["tokyoatlas","10:00","Yayoi-chan + A Bouquet of Love ในโถง Telecom Center · ในร่ม"],
@@ -489,10 +505,12 @@ window.DEFAULT_PLAN = {
    ["hotel1","21:30","กลับโรงแรม (มื้อเย็นในสวน)"]]},
   {date:"2026-10-22",dow:4,label:"พฤ. 22 ต.ค.",title:"ศาลเจ้า · ย้ายโรงแรม · กินซ่า · อากิบะ",items:[
    ["hie","08:30","ถ้าฝนตกไปแค่ที่นี่"],["hikawa","09:00",""],["toyokawa","09:30",""],["hotel1","10:15","เช็กเอาต์ นั่งแท็กซี่ไปวางกระเป๋า"],
-   ["apa","11:00","วางกระเป๋า"],["hachigou","12:30","★ อันดับ 1 · จอง TableCheck ส. 17 ต.ค. 07:00 (ไทย)"],["hakujitsu","13:30","เปิด 13:00"],
-   ["dotcom","14:15",""],["ozeki","15:00","ปิด 17:00"],["artizon","15:45",""],["bongen","16:25","อยู่ใกล้ Artizon ปิด 17:00"],
-   ["hiiragi","16:45","จองล่วงหน้า"],["cocomeister","17:45","ปิด 20:00"],
-   ["yukimura","18:30","มื้อเย็น เทมปุระคาคิอาเกะ ชินบาชิ (โทรจองได้ 03-6721-5343 เงินสด)"],
+   ["apa","11:00","วางกระเป๋า"],["hachigou","12:30","★ อันดับ 1 · จอง TableCheck ส. 17 ต.ค. 07:00 (ไทย)"],
+   ["dsm","13:15","เดินจาก Hachigou ~10 นาที · หา Cecilie Bahnsen"],
+   ["hiiragi","15:00","วันธรรมดาเดินเข้าได้ · 6 ที่นั่ง อาจรอคิว · เดินจาก DSM ~5 นาที"],
+   ["cocomeister","16:15","ปิด 20:00"],
+   ["muji","17:00","เดินจาก COCOMEISTER ~5 นาที · Tax-free ชั้น 4"],
+   ["yukimura","18:30","แท็กซี่ไปชินบาชิ ~7 นาที · มื้อเย็น เทมปุระคาคิอาเกะ ชินบาชิ (โทรจองได้ 03-6721-5343 เงินสด)"],
    ["yodobashi","19:45","แว่น Meta Adventurer · JR ชินบาชิ→อากิฮาบาระ 7 นาที"],
    ["apa","21:15","JR อากิฮาบาระ→อุเอโนะ 1 สถานี"]]},
   {date:"2026-10-23",dow:5,label:"ศ. 23 ต.ค.",title:"กาแฟ · คุระมาเอะ · บินกลับ",items:[
@@ -591,19 +609,46 @@ function numIcon(n,col){return L.divIcon({className:"",html:'<div class="mk" sty
 function popupHtml(p,extra){
   return "<b>"+esc(p.n)+"</b><br><span style='color:#667'>"+esc(p.t||catOf(p).l)+(p.a?" · "+esc(p.a):"")+"</span>"+(extra||"")+"<br><a href='"+gmaps(p)+"' target='_blank' rel='noopener'>เปิดใน Google Maps ↗</a>";
 }
-let dayBounds=null;
+let dayBounds=null, dayMarkers=[], focusIdx=-1, focusDay=-1;
 function renderDayMap(){
-  if(!dayMap) return;
-  dayLayer.clearLayers();const d=state.days[curDay];const col=DAYCOL[curDay];const pts=[];
+  if(focusDay!==curDay){focusIdx=-1;focusDay=curDay}
+  if(!dayMap){updateNav();return}
+  dayLayer.clearLayers();dayMarkers=[];const d=state.days[curDay];const col=DAYCOL[curDay];const pts=[];
+  if(focusIdx>=d.items.length) focusIdx=-1;
   d.items.forEach((it,i)=>{const p=byId(it[0]);if(!p||p.lat==null)return;
     pts.push([p.lat,p.lng]);
-    L.marker([p.lat,p.lng],{icon:numIcon(i+1,col)}).bindPopup(popupHtml(p,it[1]?"<br>🕒 "+esc(it[1]):"")).addTo(dayLayer);});
+    const m=L.marker([p.lat,p.lng],{icon:numIcon(i+1,col)}).bindPopup(popupHtml(p,it[1]?"<br>🕒 "+esc(it[1]):"")).addTo(dayLayer);
+    m.on("click",()=>{focusIdx=i;updateNav()});dayMarkers[i]=m;});
   // keep Narita off the polyline bounds if far
   if(pts.length>1) L.polyline(pts,{color:col,weight:3,opacity:.6,dashArray:"6 6"}).addTo(dayLayer);
   const fitPts=pts.filter(q=>q[1]<140.2);
   dayBounds=fitPts.length?L.latLngBounds(fitPts):null;fitDay();
 }
-function fitDay(){if(dayMap&&dayBounds) dayMap.fitBounds(dayBounds,{padding:[30,30],maxZoom:15})}
+function fitDay(){if(dayMap&&dayBounds) dayMap.fitBounds(dayBounds,{padding:[30,30],maxZoom:15});updateNav()}
+function stepFocus(dir){
+  const d=state.days[curDay];const n=d.items.length;if(!n)return;
+  let i=focusIdx;
+  for(let k=0;k<n;k++){
+    i=i<0?(dir>0?0:n-1):(i+dir+n)%n;
+    const p=byId(d.items[i][0]);if(p&&p.lat!=null)break;
+  }
+  focusIdx=i;const m=dayMarkers[i];
+  if(dayMap&&m){try{dayMap.setView(m.getLatLng(),Math.max(Number(dayMap.getZoom())||0,15),{animate:true});m.openPopup()}catch(e){}}
+  updateNav();
+  const li=document.querySelector('#stops .stop[data-i="'+i+'"]');
+  if(li&&matchMedia("(min-width: 901px)").matches){const r=li.getBoundingClientRect();if(r.top<120||r.bottom>innerHeight)li.scrollIntoView({block:"center",behavior:"smooth"})}
+}
+function updateNav(){
+  const d=state.days[curDay];const lab=$("#navAll");if(!lab)return;
+  $$("#stops .stop").forEach(li=>li.classList.toggle("focus",+li.dataset.i===focusIdx));
+  dayMarkers.forEach((m,i)=>{if(!m)return;const el=m.getElement&&m.getElement();if(!(el instanceof Element))return;const mk=el.querySelector(".mk");if(mk)mk.classList.toggle("focus",i===focusIdx)});
+  if(focusIdx<0||!d.items[focusIdx]){lab.textContent="ภาพรวมทั้งวัน · "+d.items.length+" จุด";return}
+  const it=d.items[focusIdx],p=byId(it[0]);
+  lab.textContent=(focusIdx+1)+"/"+d.items.length+" · "+(it[1]?it[1]+" ":"")+(p?p.n:"");
+}
+$("#navPrev").onclick=()=>stepFocus(-1);
+$("#navNext").onclick=()=>stepFocus(1);
+$("#navAll").onclick=()=>{focusIdx=-1;if(dayMap)dayMap.closePopup();fitDay()};
 function ensureAllMap(){
   if(allMap||!hasL()) return;
   allMap=L.map("allmap",{scrollWheelZoom:false}).setView([35.68,139.74],11);tiles(allMap);allLayer=L.layerGroup().addTo(allMap);
@@ -896,6 +941,7 @@ initDayMap();
 renderAll();
 try{const t=localStorage.getItem(KEY+"-tab");if(t&&t!=="plan"){const b=document.querySelector('.tab[data-tab="'+t+'"]');if(b)b.click()}}catch(e){}
 })();
+
 </script>
 </body>
 </html>
