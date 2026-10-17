@@ -104,7 +104,7 @@ ol.stops{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;g
 .stop .name a{color:inherit;text-decoration:none}
 .stop .name a:hover{text-decoration:underline}
 .stop .meta{font-size:12.5px;color:var(--muted)}
-.stop .note{width:100%;font-size:13.5px;padding:5px 8px;border-color:transparent;background:var(--sunk)}
+.stop .note{width:100%;font-size:13.5px;padding:5px 8px;border-color:transparent;background:var(--sunk);font-family:inherit;color:inherit;line-height:1.5;resize:none;overflow:hidden;display:block;box-sizing:border-box;border-radius:6px}
 .stop .note:hover,.stop .note:focus{border-color:var(--line)}
 .stop .tools{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
 .stop .tools select{padding:4px 6px;font-size:13px}
@@ -412,7 +412,7 @@ window.PLACES = [
  {id:"hojicha",n:"ほうじ茶STAND",cat:"cafe",t:"ชาโฮจิฉะ",a:"เมกุโระ",lat:35.6328005,lng:139.6878476,g:4.9,tl:3.06,cd:[1,2,3,4,5],bk:"walk",how:"Google ระบุเปิดเฉพาะ ส.–อา.",pid:"ChIJH-vcYABFGGARH3MdnZe4bhA"},
  {id:"rocky",n:"EW.Pharmacy / rocky's matcha",cat:"cafe",t:"มัทฉะ",a:"ฮาราจูกุ",lat:35.6696779,lng:139.7038218,g:4.4,tl:null,cd:[],bk:"walk",how:"เดินเข้าได้",pid:"ChIJT4_oyLKMGGARU9heWgBUAko"},
  // ---------- Sights / museums / shrines / parks ----------
- {id:"disneyland",n:"Tokyo Disneyland",cat:"sight",t:"สวนสนุก (ช่วงฮาโลวีน)",a:"ไมฮามะ",lat:35.6328964,lng:139.8803943,g:4.6,cd:[],how:"ตั๋วระบุวัน ราคาเปลี่ยนตามวัน (ช่วงฮาโลวีนราว ¥9,900–12,400) ซื้อบนเว็บ/แอป Tokyo Disney Resort · ใช้แอปจอง Priority Pass (ฟรี) และ Premier Access (เสียเงิน) · มีพาเรด Villains' Halloween วันละรอบ และ Haunted Mansion ธีม Nightmare Before Christmas",warn:"เวลาเปิด-ปิดเปลี่ยนตามวัน เช็กปฏิทินบนเว็บทางการ · 1–15 ต.ค. ห้ามแต่งคอสตูมเต็มตัว ช่วง 16–31 ต.ค. แต่งได้"},
+ {id:"disneyland",n:"Tokyo Disneyland",cat:"sight",t:"สวนสนุก (ช่วงฮาโลวีน)",a:"ไมฮามะ",lat:35.6328964,lng:139.8803943,g:4.6,cd:[],how:"ตั๋วระบุวัน ราคาเปลี่ยนตามวัน (ช่วงฮาโลวีนราว ¥9,900–12,400) ซื้อบนเว็บ/แอป Tokyo Disney Resort · ตั้งแต่ 1 ก.ย. 2026 ยกเลิก Priority Pass ฟรีแล้ว เหลือแต่ Premier Access (เสียเงิน ซื้อในแอปหลังเข้าสวน) · มีพาเรด Villains' Halloween วันละรอบ และ Haunted Mansion ธีม Nightmare Before Christmas · 🎢 เครื่องเล่นแนะนำสำหรับผู้ใหญ่ (เรียงตามความนิยม): ① Beauty and the Beast (PA ¥2,500) ② Splash Mountain (PA ¥1,500 เปียกได้) ③ Big Thunder Mountain (PA ¥1,500) ④ Haunted Mansion Holiday Nightmare (PA ¥1,000 เฉพาะช่วงนี้) ⑤ Pooh's Hunny Hunt (PA ¥1,500) ⑥ Pirates of the Caribbean ⑦ Star Tours ⑧ Jungle Cruise ⑨ Monsters Inc. (PA ¥1,000) ⑩ Baymax (PA ¥1,500 สั้น) ⑪ Buzz Lightyear · โชว์ในร่ม: Mickey's PhilharMagic · ข้ามได้: Dumbo, ถ้วยกาแฟ, Toontown · PA = Premier Access",warn:"เวลาเปิด-ปิดเปลี่ยนตามวัน เช็กปฏิทินบนเว็บทางการ · 1–15 ต.ค. ห้ามแต่งคอสตูมเต็มตัว ช่วง 16–31 ต.ค. แต่งได้"},
  {id:"puroland",n:"Sanrio Puroland",cat:"sight",t:"สวนสนุกในร่ม",a:"ทามะ",lat:35.624512,lng:139.429293,g:4.2,cd:[],how:"ตั๋วระบุวัน + ต้องจองวันเข้าสวนใน Sanrio+ แยกต่างหาก · ต่อ PUROLAND Wi-Fi แล้วจองถ่ายรูปคาแรกเตอร์ทันทีที่เข้า · ตู้กาชาปองรับ IC/PayPay เท่านั้น",warn:"เวลาเปิดเปลี่ยนตามวัน เช็กปฏิทินบน puroland.jp",pid:"ChIJgdAaIkvjGGARVWgIVEarqvA"},
  {id:"teamlab",n:"teamLab Borderless",cat:"museum",t:"ศิลปะดิจิทัล",a:"อาซาบุไดฮิลส์",lat:35.6620689,lng:139.7432671,g:4.6,cd:[],how:"ซื้อตั๋วแบบระบุเวลาล่วงหน้า ใช้เวลา 2–3 ชม.",pid:"ChIJQ5Sa1PqJGGARUSaNKKOrMVg"},
  {id:"mori",warn:"ปิดเปลี่ยนนิทรรศการ 24 ก.ย.–30 ต.ค. 2026 (นิทรรศการ Ron Mueck จบ 23 ก.ย. · Mariko Mori เริ่ม 31 ต.ค.)",n:"Mori Art Museum",cat:"museum",t:"พิพิธภัณฑ์ศิลปะ",a:"รปปงหงิฮิลส์",lat:35.6604621,lng:139.7292785,g:4.3,cd:[],how:"วันอังคารปกติปิด 17:00 ซื้อตั๋วออนไลน์ได้",pid:"ChIJg5RCD3eLGGAR6dbIHRM98w8"},
@@ -458,6 +458,11 @@ window.PLACES = [
  {id:"kb_fm_station",n:"FamilyMart (ใต้ดินสถานี Tameike-Sanno)",cat:"konbini",t:"ร้านสะดวกซื้อ",a:"แถว 1 Hotel (อากาซากะ)",lat:35.6709819,lng:139.7411745,g:null,cd:[],bk:"walk",how:"07:00–23:00 · อยู่ในทางเดินใต้ดิน ไม่ต้องออกข้างนอก",pid:"ChIJU_km3oWLGGARBvYPsQkHL-Q"},
  {id:"kb_famima_flagship",n:"FAMIMA FLAGSHIP STORE (Toranomon/Azabudai)",cat:"konbini",t:"ร้านสะดวกซื้อ",a:"แถว 1 Hotel (อากาซากะ)",lat:35.6624668,lng:139.7443181,g:null,cd:[],bk:"walk",how:"06:00–01:00 · ร้านต้นแบบรุ่นใหม่ · ของกินเยอะ + ของที่ระลึก FamilyMart",pid:"ChIJP6eEPwCLGGARZ8S7RaCYYSc"},
  {id:"kb_famima_azabudai",n:"Famima!! Azabudai Hills (Tower Plaza 4F)",cat:"konbini",t:"ร้านสะดวกซื้อ",a:"แถว 1 Hotel (อากาซากะ)",lat:35.6607229,lng:139.7400481,g:null,cd:[],bk:"walk",how:"07:00–23:00",pid:"ChIJ-c-f38GLGGAREu--Ent2tgI"},
+ {id:"centre",n:"Centre The Bakery Ginza",cat:"cafe",t:"เบเกอรี่ขนมปังโชกุปัง + คาเฟ่โทสต์",a:"กินซ่า 1-chōme",lat:35.6755334,lng:139.7665952,g:4.2,cd:[],bk:"walk",how:"เปิด 09:00–18:00 ทุกวัน · ไม่รับจอง ช่วงสายคิวราว 20–30 นาที · โชกุปังซื้อกลับฝั่งร้านขายแยก (ของหมดได้) · เมนูดัง: เซ็ตแยม+เนย 3 ขนมปัง, เฟรนช์โทสต์ · โทร 03-3562-1016",pid:"ChIJE8S0lOSLGGAR84AdzQ71F3I"},
+ {id:"ichiban",n:"Ichiban (ซูชิสายพาน ชินบาชิ)",cat:"sushi",t:"ซูชิสายพานร้านเล็กของคนท้องถิ่น",a:"ชินบาชิ 3-chōme",lat:35.6657979,lng:139.7573392,g:3.7,cd:[],bk:"walk",how:"เปิด 11:00–23:30 (อา. ถึง 23:00) · หยิบจากสายพานหรือสั่งเชฟ · ทางกลับจาก Disney: JR โตเกียว→ชินบาชิ แล้วกินซ่าไลน์ ชินบาชิ→ทาเมะอิเกะซันโน 4 นาที",pid:"ChIJee8bJuqLGGARQE7ba4x8kyI"},
+ {id:"kuraginza",n:"Kura Sushi Ginza (Global Flagship)",cat:"sushi",t:"ซูชิสายพานเครือใหญ่ สั่งผ่านแท็บเล็ต มีเกมแลกของ",a:"กินซ่า 3-chōme (Marronnier Gate 2 ชั้น 7)",lat:35.6737637,lng:139.7651281,g:4.1,cd:[],bk:"can",how:"เปิด 11:00–23:00 · จองคิวผ่านแอป/เว็บ Kura Sushi ได้ · จานละ ~¥115–500 · กินซ่าไลน์ กินซ่า→ทาเมะอิเกะซันโน 6 นาที",pid:"ChIJoWc0a7yLGGARhItMlJx8SYI"},
+ {id:"umaisushikan",n:"Umai Sushikan Akasaka",cat:"sushi",t:"ซูชิราคากลาง สั่งผ่านแท็บเล็ต (ไม่ใช่สายพาน)",a:"อากาซากะ 3-chōme",lat:35.673035,lng:139.7373,g:3.9,cd:[],bk:"walk",how:"เปิด 11:30–23:00 · ใกล้ 1 Hotel เดิน ~8 นาที · เมนูอังกฤษ ซุปมิโซะฟรี",pid:"ChIJAQCUM4eLGGAR4cMtsbHWHMk"},
+ {id:"ichiran",n:"Ichiran Shimbashi",cat:"ramen",t:"ราเมงทงคตสึ คอกนั่งเดี่ยว (เครือดัง)",a:"ชินบาชิ 2-chōme ชั้น 2",lat:35.6675081,lng:139.7560198,g:4.3,cd:[],bk:"walk",how:"เปิด 24 ชม. · ซื้อตั๋วที่ตู้ (มีภาษาอังกฤษ) แล้วกรอกกระดาษเลือกความเข้มข้น/ความเผ็ด/ความนุ่มเส้น · มักรอ 10–15 นาที · ใกล้ JR ชินบาชิ กินซ่าไลน์ไปทาเมะอิเกะซันโน 4 นาที · น้ำซุปกระดูกหมู ไม่มีเนื้อวัว",pid:"ChIJF0WZ2-uLGGAR9kfXM51Wfxk"},
  {id:"sanrioasakusa",n:"Sanrio Gift Gate Asakusa",cat:"shop",t:"ร้าน Sanrio",a:"อาซากุสะ",lat:35.711491,lng:139.794924,g:4.4,cd:[],how:"ทางเข้าเป็น Hello Kitty ตัวใหญ่",pid:"ChIJ0zfByHGPGGARHC7LMPjhGX0"},
  {id:"cocomeister",n:"COCOMEISTER Ginza",cat:"shop",t:"เครื่องหนังญี่ปุ่น",a:"กินซ่า",lat:35.6728427,lng:139.766063,g:4.6,cd:[],how:"เปิดถึง 20:00",pid:"ChIJoQ-001mLGGARZwkyksy1eyU"},
  {id:"hakujitsu",n:"Hakujitsu",cat:"shop",t:"เซรามิก / ของแต่งบ้าน",a:"ยานางิบาชิ",lat:35.6975853,lng:139.7874603,g:3.9,cd:[],how:"เปิด 13:00–17:00",pid:"ChIJRQhgaqWOGGARNlZXFyQ4rdc"},
@@ -487,7 +492,7 @@ window.FOOD = ["ramen","tonkatsu","sushi","izakaya","yakitori","tempura","soba",
 
 // Claude's plan (times = Japan time)
 window.DEFAULT_PLAN = {
- v:19,
+ v:28,
  days:[
   {date:"2026-10-19",dow:1,label:"จ. 19 ต.ค.",title:"ถึงโตเกียว · อาโอยามะ ฮาราจูกุ รปปงหงิ",items:[
    ["haneda","06:00",""],["hotel1","08:30","ฝากกระเป๋า ขอ early check-in"],
@@ -510,17 +515,18 @@ window.DEFAULT_PLAN = {
    ["hotel1","16:15","กลับโรงแรม พัก"],
    ["hisui","19:00","มื้อเย็น ราเมนใกล้โรงแรม · ไม่รับเงินสด"]]},
   {date:"2026-10-21",dow:3,label:"พ. 21 ต.ค.",title:"Tokyo Disneyland ทั้งวัน",items:[
-   ["hotel1","09:15","ออกจากโรงแรม รถไฟไปสถานีไมฮามะ ราว 40 นาที"],
-   ["disneyland","10:00","เข้าสวนแล้วจอง Priority Pass ในแอปทันที · ใช้ตั๋ว 1-Day ปกติ"],
-   ["hotel1","21:30","กลับโรงแรม (มื้อเย็นในสวน)"]]},
+   ["hotel1","09:15","ออกจากโรงแรม รถไฟไปสถานีไมฮามะ ราว 40–45 นาที · ก่อนออกเช็กว่าผูกตั๋วทั้ง 2 ใบในแอปแล้ว"],
+   ["disneyland","10:00","สวนเปิด 09:00–21:00 · มาถึง ~10:00 เลี่ยงคนแน่นตอนเปิดประตู (ซื้อตั๋วแล้ว เข้าได้ทันทีไม่ต้องต่อคิวนาน)\n⚠️ Priority Pass ฟรียกเลิกแล้ว (ตั้งแต่ 1 ก.ย.) เหลือ Premier Access เสียเงิน ซื้อในแอปหลังเข้าสวน · ซื้อเครื่องถัดไปได้เมื่อครบ 60 นาทีหลังซื้อ หรือเมื่อถึงเวลาเริ่มใช้รอบที่ถืออยู่ (แล้วแต่อะไรถึงก่อน) · กดยืนยันแล้วยกเลิก/คืนเงินไม่ได้\n① เข้าสวนแล้วเปิดแอปซื้อทันที: ★ Beauty and the Beast ¥2,500/คน (เต็มเร็วสุด ถ้ารอบหมดแล้ว ให้ซื้อ Baymax/Splash/Big Thunder แทน)\n   ซื้อเพิ่มได้: Baymax / Splash / Big Thunder / Pooh ¥1,500 · Monsters Inc. / Haunted Mansion ¥1,000\n② ระหว่างรอรอบ Premier Access ต่อคิวปกติเครื่องที่คิวไม่ยาว (ดูเวลารอในแอป): Pooh's Hunny Hunt, Big Thunder, Haunted Mansion Holiday Nightmare\n③ 10:15 สั่ง Mobile Order มื้อกลางวันเลย รับ ~11:30 (สั่งล่วงหน้า ≥1 ชม.) · หาโต๊ะก่อนกด 'รับสินค้า' (ตัดเงินตอนกด)\n④ 12:30 จองที่ดูพาเรด → 13:00 ★ Villains' Halloween \"Into the Frenzy\" ~45 นาที (วันละรอบเดียว) · จุดหยุด: Westernland/Fantasyland, Plaza, Tomorrowland/Toontown\n⑤ บ่าย: Pirates of the Caribbean, Jungle Cruise, Star Tours, Buzz Lightyear, Monsters Inc. + ไปตามรอบ Premier Access\n⑥ 17:00 สั่ง Mobile Order มื้อเย็น รับ ~18:00 (30 นาทีก่อนพาเรดมักมีคนยกเลิก ได้รอบง่าย)\n⑦ 19:15 Electrical Parade Dreamlights · 20:30 Night High Halloween แล้วออกจากสวน\n🍽 Mobile Order แนะนำ: Grandma Sara's Kitchen (ข้าว/ออมุไรซ์ ในร่ม) · Plazma Ray's Diner (ไก่) · Camp Woodchuck Kitchen · Captain Hook's Galley (พิซซ่า) · Huey Dewey Louie's (พิซซ่า/แซนด์วิช) · Great American Waffle (วาฟเฟิลมิกกี้ สั่งผ่านแอปเท่านั้น)\n🚫 ระวังเนื้อวัว: Hungry Bear (แกงกะหรี่) เลือกไก่/ผัก · Tomorrowland Terrace (เบอร์เกอร์) เลือกกุ้ง/ไก่ · Pecos Bill Café เช็กเมนูก่อน"],
+   ["hotel1","21:45","กลับโรงแรม (มื้อเย็นในสวน ใช้ Mobile Order)"]]},
   {date:"2026-10-22",dow:4,label:"พฤ. 22 ต.ค.",title:"ศาลเจ้า · ย้ายโรงแรม · กินซ่า · อากิบะ",items:[
    ["hie","08:30","ถ้าฝนตกไปแค่ที่นี่"],["hikawa","09:00",""],["toyokawa","09:30",""],["hotel1","10:15","เช็กเอาต์ นั่งแท็กซี่ไปวางกระเป๋า"],
-   ["apa","11:00","วางกระเป๋า"],["hachigou","12:30","★ อันดับ 1 · จอง TableCheck ส. 17 ต.ค. 07:00 (ไทย)"],
-   ["dsm","13:15","เดินจาก Hachigou ~10 นาที · หา Cecilie Bahnsen"],
-   ["hiiragi","15:00","วันธรรมดาเดินเข้าได้ · 6 ที่นั่ง อาจรอคิว · เดินจาก DSM ~5 นาที"],
-   ["cocomeister","16:15","ปิด 20:00"],
-   ["muji","17:00","เดินจาก COCOMEISTER ~5 นาที · Tax-free ชั้น 4"],
-   ["yukimura","18:30","แท็กซี่ไปชินบาชิ ~7 นาที · มื้อเย็น เทมปุระคาคิอาเกะ ชินบาชิ (โทรจองได้ 03-6721-5343 เงินสด)"],
+   ["apa","11:00","วางกระเป๋า · Hibiya line อุเอโนะ→กินซ่า ~15 นาที"],
+   ["centre","11:45","โชกุปัง/โทสต์ · แบ่งกันกินเบาๆ เพราะ 14:00 มีราเมง หรือซื้อขนมปังกลับ · คิวราว 20–30 นาที"],
+   ["dsm","12:50","เดินจาก Centre ~10 นาที · หา Cecilie Bahnsen · ออกจากร้าน 13:40"],
+   ["hachigou","14:00","★ ✓ จองแล้ว 14:00 · เดินจาก DSM ~10 นาที ไปถึงก่อน 5–10 นาที · นั่งได้ 30 นาที"],
+   ["muji","14:45","เดินจาก Hachigou ~6 นาที · 11 ชั้น · Tax-free ชั้น 4"],
+   ["hiiragi","16:30","✓ จองแล้ว 16:30 · คาคิโกริมัทฉะ · เดินจาก MUJI ~8 นาที · นั่งได้ 1 ชม."],
+   ["yukimura","18:30","จาก HIIRAGI เดิน ~15 นาที หรือแท็กซี่ ~5 นาที · มื้อเย็น เทมปุระคาคิอาเกะ ชินบาชิ (โทรจองได้ 03-6721-5343 เงินสด)"],
    ["yodobashi","19:45","แว่น Meta Adventurer · JR ชินบาชิ→อากิฮาบาระ 7 นาที"],
    ["apa","21:15","JR อากิฮาบาระ→อุเอโนะ 1 สถานี"]]},
   {date:"2026-10-23",dow:5,label:"ศ. 23 ต.ค.",title:"กาแฟ · คุระมาเอะ · บินกลับ",items:[
@@ -533,11 +539,11 @@ window.DEFAULT_PLAN = {
 window.DEADLINES = [
  {w:"ซื้อเลย",now:1,what:"Tokyo Disneyland พ. 21 ต.ค.",note:"ตั๋ว 1-Day ระบุวัน บนเว็บ/แอป Tokyo Disney Resort แล้วผูกตั๋วทั้ง 2 ใบในแอป"},
  {w:"จองได้เลย",now:1,what:"TOKYO ATLAS ลานจอดรถใต้ดิน อ. 20 ต.ค. 11:00",note:"ฟรี · จองรอบผ่าน ArtSticker artsticker.app/events/157445"},
- {w:"จองได้เลย",now:1,what:"HIIRAGI Ginza 22 ต.ค. ~16:45",note:"จองออนไลน์ จ่ายล่วงหน้า"},
+  {w:"✓ จองแล้ว",what:"HIIRAGI Ginza พฤ. 22 ต.ค. 16:30",note:"จ่ายล่วงหน้าแล้ว · นั่งได้ 1 ชม."},
  {w:"✓ จองแล้ว",what:"Tempura Yukimura 22 ต.ค. 18:30",note:"AutoReserve ยืนยันแล้ว · เงินสดเท่านั้น"},
  {w:"15–17 ต.ค.",what:"MENDOKORO TOMO Premium 19 ต.ค. 18:45",note:"จองผ่าน Google Maps · ไม่ได้ก็ walk-in"},
  {w:"จองได้ (ไม่บังคับ)",what:"Ramen HISUI 20 ต.ค. 19:00",note:"TableCheck หรือต่อคิว · ไม่รับเงินสด"},
- {w:"ส. 17 ต.ค. 07:00",now:1,what:"★ Ginza Hachigou",note:"อันดับ 1 · ลอง พฤ. 22 เที่ยง → ศ. 23 เที่ยง · ค่าจอง ¥500/คน · ตั้งปลุก 06:50 ล็อกอินรอ"}
+ {w:"✓ จองแล้ว",what:"★ Ginza Hachigou พฤ. 22 ต.ค. 14:00",note:"TableCheck · ไปถึงก่อนเวลา 5–10 นาที · นั่งได้ 30 นาที"}
 ];
 
 </script>
@@ -711,7 +717,7 @@ function renderPlan(){
         '<div class="meta">'+esc(p.t||cat.l)+(p.a?" · "+esc(p.a):"")+(p.tl?' · Tabelog '+p.tl.toFixed(2):'')+(p.g?' · Google '+p.g.toFixed(1):'')+'</div>'+
         (p.how?'<div class="meta">'+esc(p.how)+'</div>':'')+
         (p.warn?'<div class="meta" style="color:var(--warn)">⚠ '+esc(p.warn)+'</div>':'')+
-        '<input type="text" class="note" value="'+esc(it[2])+'" data-note="'+i+'" placeholder="โน้ต…" aria-label="โน้ต">'+
+        '<textarea class="note" rows="1" data-note="'+i+'" placeholder="โน้ต…" aria-label="โน้ต">'+esc(it[2])+'</textarea>'+
         '<div class="tools">'+
           '<button class="btn icon" type="button" data-up="'+i+'" aria-label="เลื่อนขึ้น"'+(i===0?" disabled":"")+'>↑</button>'+
           '<button class="btn icon" type="button" data-down="'+i+'" aria-label="เลื่อนลง"'+(i===d.items.length-1?" disabled":"")+'>↓</button>'+
@@ -722,7 +728,7 @@ function renderPlan(){
       '</div></li>';
   }).join("");
   ol.querySelectorAll("[data-time]").forEach(el=>el.onchange=()=>{d.items[+el.dataset.time][1]=el.value;save();renderDayMap()});
-  ol.querySelectorAll("[data-note]").forEach(el=>el.onchange=()=>{d.items[+el.dataset.note][2]=el.value;save()});
+  ol.querySelectorAll("[data-note]").forEach(el=>{const fit=()=>{el.style.height="auto";el.style.height=el.scrollHeight+"px"};requestAnimationFrame(fit);el.oninput=fit;el.onchange=()=>{d.items[+el.dataset.note][2]=el.value;save()}});
   ol.querySelectorAll("[data-up]").forEach(el=>el.onclick=()=>{const i=+el.dataset.up;[d.items[i-1],d.items[i]]=[d.items[i],d.items[i-1]];save();renderPlan()});
   ol.querySelectorAll("[data-down]").forEach(el=>el.onclick=()=>{const i=+el.dataset.down;[d.items[i+1],d.items[i]]=[d.items[i],d.items[i+1]];save();renderPlan()});
   ol.querySelectorAll("[data-del]").forEach(el=>el.onclick=()=>{const i=+el.dataset.del;const p=byId(d.items[i][0]);act("เอา "+p.n+" ออกจาก"+d.label+"แล้ว",()=>d.items.splice(i,1))});
