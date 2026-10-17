@@ -366,7 +366,7 @@ window.PLACES = [
  {id:"yakumo",n:"Yakumo",cat:"ramen",t:"ราเมนเกี๊ยว",a:"ฮิงาชิยามะ (นาคาเมกุโระ)",lat:35.6501307,lng:139.6868459,g:4.2,tl:3.78,mich:1,cd:[],bk:"walk",how:"ต่อคิว คิวเดินเร็ว เงินสดเท่านั้น",pid:"ChIJGTrknqz0GGARxnC8Ps-HaWc"},
  {id:"iruca",n:"Iruca Tokyo Roppongi",cat:"ramen",t:"ราเมนทรัฟเฟิล",a:"รปปงหงิ",lat:35.6648012,lng:139.7316413,g:4.0,tl:null,mich:1,cd:[1],bk:"walk",how:"ต่อคิว สั่งอาหารระหว่างรอ",pid:"ChIJ84McqUSLGGAR8KhSukUSKIs"},
  {id:"asama",n:"Teuchi ASAMA",cat:"ramen",t:"ราเมนเส้นทำมือ",a:"คามิเมกุโระ",lat:35.642685,lng:139.6981075,g:4.0,tl:3.68,mich:1,cd:[4],bk:"walk",how:"ต่อคิว เจ้าของทำคนเดียว ออกช้า",pid:"ChIJG2bMXQCLGGARue7ZjzKbmgA"},
- {id:"tomo",n:"MENDOKORO TOMO Premium",cat:"ramen",t:"ราเมน",a:"อากาซากะ",lat:35.6748141,lng:139.7356844,g:4.3,tl:3.57,mich:0,cd:[0],bk:"walk",how:"เดินเข้าได้ ราเมนทรัฟเฟิล",pid:"ChIJs9-mVsGNGGARkOUHHEwrgKw"},
+ {id:"tomo",n:"MENDOKORO TOMO Premium",warn:"⛔ ปิดรีโนเวตตั้งแต่ 17 ต.ค. เปิดใหม่ต้นธันวาคม 2026 ในชื่อ 赤坂麺処 友極",cat:"ramen",t:"ราเมน",a:"อากาซากะ",lat:35.6748141,lng:139.7356844,g:4.3,tl:3.57,mich:0,cd:[0],bk:"walk",how:"เดินเข้าได้ ราเมนทรัฟเฟิล",pid:"ChIJs9-mVsGNGGARkOUHHEwrgKw"},
  {id:"haruchan",n:"Ginza Haruchan Ramen",cat:"ramen",t:"ราเมนเกลือ",a:"กินซ่า",lat:35.6708476,lng:139.7688332,g:4.3,tl:3.65,mich:1,cd:[2],bk:"walk",how:"กดตั๋วหน้าร้าน ช่วงบ่ายมักไม่ต้องรอ",pid:"ChIJJcvBZwCLGGARf0D_3U26Cws"},
  {id:"wantan",n:"Akasaka Chinese Wantan Tei",cat:"chinese",t:"เกี๊ยว / จีน",a:"อากาซากะ",lat:35.674126,lng:139.7366499,g:3.9,tl:3.49,mich:0,cd:[],bk:"walk",how:"เปิดถึงตี 5 เหมาะเป็นมื้อดึก",pid:"ChIJxY4JRACLGGARVD3do-7o2H0"},
  // ---------- Tonkatsu ----------
@@ -462,6 +462,8 @@ window.PLACES = [
  {id:"ichiban",n:"Ichiban (ซูชิสายพาน ชินบาชิ)",cat:"sushi",t:"ซูชิสายพานร้านเล็กของคนท้องถิ่น",a:"ชินบาชิ 3-chōme",lat:35.6657979,lng:139.7573392,g:3.7,cd:[],bk:"walk",how:"เปิด 11:00–23:30 (อา. ถึง 23:00) · หยิบจากสายพานหรือสั่งเชฟ · ทางกลับจาก Disney: JR โตเกียว→ชินบาชิ แล้วกินซ่าไลน์ ชินบาชิ→ทาเมะอิเกะซันโน 4 นาที",pid:"ChIJee8bJuqLGGARQE7ba4x8kyI"},
  {id:"kuraginza",n:"Kura Sushi Ginza (Global Flagship)",cat:"sushi",t:"ซูชิสายพานเครือใหญ่ สั่งผ่านแท็บเล็ต มีเกมแลกของ",a:"กินซ่า 3-chōme (Marronnier Gate 2 ชั้น 7)",lat:35.6737637,lng:139.7651281,g:4.1,cd:[],bk:"can",how:"เปิด 11:00–23:00 · จองคิวผ่านแอป/เว็บ Kura Sushi ได้ · จานละ ~¥115–500 · กินซ่าไลน์ กินซ่า→ทาเมะอิเกะซันโน 6 นาที",pid:"ChIJoWc0a7yLGGARhItMlJx8SYI"},
  {id:"umaisushikan",n:"Umai Sushikan Akasaka",cat:"sushi",t:"ซูชิราคากลาง สั่งผ่านแท็บเล็ต (ไม่ใช่สายพาน)",a:"อากาซากะ 3-chōme",lat:35.673035,lng:139.7373,g:3.9,cd:[],bk:"walk",how:"เปิด 11:30–23:00 · ใกล้ 1 Hotel เดิน ~8 นาที · เมนูอังกฤษ ซุปมิโซะฟรี",pid:"ChIJAQCUM4eLGGAR4cMtsbHWHMk"},
+ {id:"ichiran",n:"Ichiran Shimbashi",cat:"ramen",t:"ราเมงทงคตสึ คอกนั่งเดี่ยว (เครือดัง)",a:"ชินบาชิ 2-chōme ชั้น 2",lat:35.6675081,lng:139.7560198,g:4.3,cd:[],bk:"walk",how:"เปิด 24 ชม. · ซื้อตั๋วที่ตู้ (มีภาษาอังกฤษ) แล้วกรอกกระดาษเลือกความเข้มข้น/ความเผ็ด/ความนุ่มเส้น · มักรอ 10–15 นาที · ใกล้ JR ชินบาชิ กินซ่าไลน์ไปทาเมะอิเกะซันโน 4 นาที · น้ำซุปกระดูกหมู ไม่มีเนื้อวัว",pid:"ChIJF0WZ2-uLGGAR9kfXM51Wfxk"},
+ {id:"tomoakasaka",n:"Akasaka Mendokoro TOMO (ร้านพี่น้องของ TOMO Premium)",cat:"ramen",t:"ราเมนน้ำซุปไก่ข้น (Paitan) มีราเมนไก่ทรัฟเฟิล + เกี๊ยวซ่า",a:"อากาซากะ 2-13-13 Orange Bldg 1F",lat:35.6719376,lng:139.7385634,g:4.0,cd:[],bk:"walk",how:"เว็บร้าน: จ.–ศ. 11:00–26:30 · ส.–อา./วันหยุด 11:00–21:00 (เข้าร้านสุดท้าย 20:30) · ปิดเสาร์ที่ 2 ของเดือน · (Google Maps ขึ้นว่าปิด 22:30 วันธรรมดา) · สั่งที่ตู้/แท็บเล็ต มีภาษาอังกฤษ · เดินจาก 1 Hotel ~4 นาที · โทร 03-6426-5120",pid:"ChIJ__9W6IaLGGARCDSyySTubag"},
  {id:"sanrioasakusa",n:"Sanrio Gift Gate Asakusa",cat:"shop",t:"ร้าน Sanrio",a:"อาซากุสะ",lat:35.711491,lng:139.794924,g:4.4,cd:[],how:"ทางเข้าเป็น Hello Kitty ตัวใหญ่",pid:"ChIJ0zfByHGPGGARHC7LMPjhGX0"},
  {id:"cocomeister",n:"COCOMEISTER Ginza",cat:"shop",t:"เครื่องหนังญี่ปุ่น",a:"กินซ่า",lat:35.6728427,lng:139.766063,g:4.6,cd:[],how:"เปิดถึง 20:00",pid:"ChIJoQ-001mLGGARZwkyksy1eyU"},
  {id:"hakujitsu",n:"Hakujitsu",cat:"shop",t:"เซรามิก / ของแต่งบ้าน",a:"ยานางิบาชิ",lat:35.6975853,lng:139.7874603,g:3.9,cd:[],how:"เปิด 13:00–17:00",pid:"ChIJRQhgaqWOGGARNlZXFyQ4rdc"},
@@ -491,7 +493,7 @@ window.FOOD = ["ramen","tonkatsu","sushi","izakaya","yakitori","tempura","soba",
 
 // Claude's plan (times = Japan time)
 window.DEFAULT_PLAN = {
- v:28,
+ v:31,
  days:[
   {date:"2026-10-19",dow:1,label:"จ. 19 ต.ค.",title:"ถึงโตเกียว · อาโอยามะ ฮาราจูกุ รปปงหงิ",items:[
    ["haneda","06:00",""],["hotel1","08:30","ฝากกระเป๋า ขอ early check-in"],
@@ -501,7 +503,7 @@ window.DEFAULT_PLAN = {
    ["tsujihan","14:50","ไคเซนด้ง ก่อนเข้าโรงแรม (แท็กซี่ ~20 นาที) · ห้างอยู่ใกล้ 1 Hotel"],["hotel1","15:35","เช็กอิน แล้วนั่งพักที่บาร์/เลานจ์ของ 1 Hotel กินอะไรเบาๆ"],
    ["nact","16:50","แท็กซี่ ~8 นาที · วันจันทร์ปิด 18:00 · ออก 17:45"],
    ["teamlab","18:00","✓ จองแล้ว รอบ 18:00–18:30 · แท็กซี่จาก National Art Center ~10 นาที · เผื่อ ~2 ชม. · มีล็อกเกอร์ฟรี · โหลดแอป teamLab ก่อน"],
-   ["tomo","20:30","มื้อเย็น ราเมนทรัฟเฟิล · เปิดถึง 22:00 · แท็กซี่ ~8 นาที"],
+   ["tomoakasaka","20:30","ร้านพี่น้องของ TOMO Premium (ที่ปิดรีโนเวต) · มีราเมนไก่ทรัฟเฟิล · จาก teamLab แท็กซี่ ~7 นาที · กินเสร็จเดินกลับโรงแรม ~4 นาที · สำรอง: Ichiran Shimbashi (24 ชม.)"],
    ["hotel1","21:30","กลับโรงแรม"]]},
   {date:"2026-10-20",dow:2,label:"อ. 20 ต.ค.",title:"โอไดบะ · TOKYO ATLAS (Yayoi Kusama) · วันฝน",items:[
    ["hotel1","09:30","แท็กซี่ไปโอไดบะ ~25 นาที (หรือรถไฟ Yurikamome จากชิมบาชิ)"],
@@ -536,13 +538,14 @@ window.DEFAULT_PLAN = {
 };
 
 window.DEADLINES = [
- {w:"ซื้อเลย",now:1,what:"Tokyo Disneyland พ. 21 ต.ค.",note:"ตั๋ว 1-Day ระบุวัน บนเว็บ/แอป Tokyo Disney Resort แล้วผูกตั๋วทั้ง 2 ใบในแอป"},
+ {w:"ก่อนบิน",now:1,what:"Visit Japan Web (ตม. + ศุลกากร)",note:"กรอกออนไลน์ให้ครบทั้ง 2 คน แล้วแคปหน้าจอ QR ไว้ ใช้ตอนผ่าน ตม./ศุลกากรที่ฮาเนดะ"},
  {w:"จองได้เลย",now:1,what:"TOKYO ATLAS ลานจอดรถใต้ดิน อ. 20 ต.ค. 11:00",note:"ฟรี · จองรอบผ่าน ArtSticker artsticker.app/events/157445"},
-  {w:"✓ จองแล้ว",what:"HIIRAGI Ginza พฤ. 22 ต.ค. 16:30",note:"จ่ายล่วงหน้าแล้ว · นั่งได้ 1 ชม."},
- {w:"✓ จองแล้ว",what:"Tempura Yukimura 22 ต.ค. 18:30",note:"AutoReserve ยืนยันแล้ว · เงินสดเท่านั้น"},
- {w:"15–17 ต.ค.",what:"MENDOKORO TOMO Premium 19 ต.ค. 18:45",note:"จองผ่าน Google Maps · ไม่ได้ก็ walk-in"},
- {w:"จองได้ (ไม่บังคับ)",what:"Ramen HISUI 20 ต.ค. 19:00",note:"TableCheck หรือต่อคิว · ไม่รับเงินสด"},
- {w:"✓ จองแล้ว",what:"★ Ginza Hachigou พฤ. 22 ต.ค. 14:00",note:"TableCheck · ไปถึงก่อนเวลา 5–10 นาที · นั่งได้ 30 นาที"}
+ {w:"✓ ซื้อแล้ว",what:"Tokyo Disneyland พ. 21 ต.ค.",note:"ผูกตั๋วทั้ง 2 ใบในแอป (Scan Ticket) ก่อนวันไป"},
+ {w:"✓ จองแล้ว",what:"teamLab Borderless จ. 19 ต.ค. 18:00–18:30",note:""},
+ {w:"✓ จองแล้ว",what:"★ Ginza Hachigou พฤ. 22 ต.ค. 14:00",note:"TableCheck · ไปถึงก่อนเวลา 5–10 นาที · นั่งได้ 30 นาที"},
+ {w:"✓ จองแล้ว",what:"HIIRAGI Ginza พฤ. 22 ต.ค. 16:30",note:"จ่ายล่วงหน้าแล้ว · นั่งได้ 1 ชม."},
+ {w:"✓ จองแล้ว",what:"Tempura Yukimura พฤ. 22 ต.ค. 18:30",note:"AutoReserve ยืนยันแล้ว · เงินสดเท่านั้น"},
+ {w:"ไม่ต้องจอง",what:"Ramen HISUI อ. 20 ต.ค. เย็น",note:"รอบเย็นวันธรรมดาเดินเข้า ต่อคิว · ไม่รับเงินสด"}
 ];
 
 </script>
